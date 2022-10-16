@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Slide from "../components/Slide";
+import Nav from "../components/Nav";
 
 const Main = () => {
   return (
@@ -8,6 +9,7 @@ const Main = () => {
       <MainStyle>
         <div className="outer-container">
           <div className="inner-container">
+            <Nav />
             <Slide />
           </div>
         </div>
