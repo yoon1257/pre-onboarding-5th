@@ -1,39 +1,45 @@
 import React from "react";
 import styled from "styled-components";
-import ChartLine from "../components/ChartLine";
-import Slide from "../components/Slide";
+import { blue } from "../styles/theme";
+import { ChartPie } from "../components/ChartPie";
 
 const User = () => {
   return (
     <>
-      <MainStyle>
+      <UserBlock>
         <div className="outer-container">
           <div className="inner-container">
-            <ChartLine />
+            <div className="chart-pie">
+              <ChartPie />
+            </div>
           </div>
         </div>
-      </MainStyle>
+      </UserBlock>
     </>
   );
 };
-const MainStyle = styled.div`
-  /* background-image: url("/images/space.jpeg"); */
-  background-color: #000;
+const UserBlock = styled.div`
+  background-image: url("/images/space.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
   .outer-container {
-    border: 1px solid blue;
+    border-left: 1px solid ${blue};
     height: 100%;
     display: flex;
     align-items: center;
     .inner-container {
       display: flex;
       margin: 0 auto;
-      border: 1px solid skyblue;
+      border: 1px solid ${blue};
       border-radius: 10px;
       width: 80%;
       height: 500px;
+      .chart-pie {
+        position: relative;
+        width: 150px;
+        height: 150px;
+      }
     }
   }
 `;
