@@ -5,6 +5,7 @@ import Main from "./pages/Main";
 import User from "./pages/User";
 import List from "./pages/List";
 import Setting from "./pages/Setting";
+import Write from "./pages/Write";
 
 const Router = () => {
   return (
@@ -15,6 +16,7 @@ const Router = () => {
         <Route path="/user" element={<User />} />
         <Route path="/list" element={<List />} />
         <Route path="/setting" element={<Setting />} />
+        <Route path="/write" element={<Write />} />
       </Routes>
     </BrowserRouter>
   );
