@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { blue } from "../styles/theme";
 import axios from "axios";
+import { data } from "../components/ChartPie";
 
-const List = () => {
+const List = (id) => {
   const [showData, setShowData] = useState("");
   const navigate = useNavigate();
   const handleWrite = () => {
@@ -21,7 +22,7 @@ const List = () => {
         console.log("에러에러", err);
       });
   }, []);
-  console.log("data", showData);
+  console.log("data", data);
   return (
     <ListBlock>
       <div className="outer-container">
@@ -48,12 +49,18 @@ const List = () => {
               {showData &&
                 showData.map((data) => {
                   return (
-                    <div>
-                      <div className="num">{data.id}</div>
-                      <div className="subject">{data.title}</div>
-                      <div className="user">{data.user}</div>
-                      <div className="time">{data.time}</div>
-                    </div>
+                    <>
+                      <Link to={`/detail/${id}`} />
+                      <div>
+                        <div className="num">{data.id}</div>
+                        <div className="subject" data={data}>
+                          {data.title}
+                        </div>
+
+                        <div className="user">{data.user}</div>
+                        <div className="time">{data.time}</div>
+                      </div>
+                    </>
                   );
                 })}
             </div>

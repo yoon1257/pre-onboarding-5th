@@ -7,7 +7,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 export const data = {
   datasets: [
     {
-      label: "# of Votes",
+      label: "사용자 연령대",
       data: [35, 29, 11, 10, 8, 7],
       backgroundColor: [
         "#56C1FE",
