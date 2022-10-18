@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { blue } from "../styles/theme";
+import axios from "axios";
 
 const List = () => {
+  const [showData, setShowData] = useState("");
   const navigate = useNavigate();
   const handleWrite = () => {
     navigate("/write");
   };
+  useEffect(() => {
+    axios
+      .get("./data/context.json")
+      .then((res) => {
+        setShowData(res.data);
+        console.log("성공");
+      })
+      .catch((err) => {
+        console.log("에러에러", err);
+      });
+  }, []);
+  console.log("data", showData);
   return (
     <ListBlock>
       <div className="outer-container">
@@ -31,12 +45,17 @@ const List = () => {
                 <div className="user">작성자</div>
                 <div className="time">시간</div>
               </div>
-              <div>
-                <div className="num">1</div>
-                <div className="subject">글이 들어갑니다</div>
-                <div className="user">user1</div>
-                <div className="time">time</div>
-              </div>
+              {showData &&
+                showData.map((data) => {
+                  return (
+                    <div>
+                      <div className="num">{data.id}</div>
+                      <div className="subject">{data.title}</div>
+                      <div className="user">{data.user}</div>
+                      <div className="time">{data.time}</div>
+                    </div>
+                  );
+                })}
             </div>
             <div className="board- page"></div>
             <div className="btn-wrap">
