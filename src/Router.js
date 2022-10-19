@@ -10,7 +10,7 @@ import Detail from "./components/Detail";
 
 const Router = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="pre-onboarding-5th">
       <Sidebar />
       <Routes>
         <Route path="/" element={<Main />} />

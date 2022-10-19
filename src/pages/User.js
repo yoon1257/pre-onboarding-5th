@@ -4,7 +4,7 @@ import { blue } from "../styles/theme";
 import { ChartPie } from "../components/ChartPie";
 import ChartBar from "../components/CharBar";
 import ChartLine from "../components/ChartLine";
-import { proflie } from "../assets/image/proflie.jpeg";
+import proflie from "../assets/image/proflie.jpeg";
 const User = () => {
   return (
     <>
