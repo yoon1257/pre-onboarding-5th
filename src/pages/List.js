@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { blue } from "../styles/theme";
 import axios from "axios";
 
-const List = (id) => {
+const List = () => {
   const [showData, setShowData] = useState("");
   const navigate = useNavigate();
   const handleWrite = () => {
@@ -12,7 +12,7 @@ const List = (id) => {
   };
   useEffect(() => {
     axios
-      .get("/data/context.json")
+      .get("data/context.json")
       .then((res) => {
         setShowData(res.data);
         console.log("성공");
@@ -48,14 +48,10 @@ const List = (id) => {
                 showData.map((data) => {
                   return (
                     <>
-                      <div key={data.id}>
+                      <div>
                         <div className="num">{data.id}</div>
                         <div className="subject">
-                          <Link
-                            to={"/detail/" + id}
-                            state={{ data: "data" }}
-                            className="title"
-                          >
+                          <Link to={`/detail/${data.id}`} className="title">
                             {data.title}
                           </Link>
                         </div>
