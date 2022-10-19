@@ -22,9 +22,7 @@ const Write = () => {
   );
 };
 const WriteStyle = styled.div`
-  background-image: url("/images/space.jpeg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: #fff;
   height: 100vh;
   .outer-container {
     border-left: 1px solid ${blue};
@@ -53,7 +51,7 @@ const WriteStyle = styled.div`
           background-color: transparent;
           border-radius: 5px;
           border: 1px solid ${blue};
-          color: #fff;
+          color: #000;
           &:focus {
             outline: none;
           }
@@ -65,7 +63,7 @@ const WriteStyle = styled.div`
           background-color: transparent;
           border: 1px solid ${blue};
           text-align: center;
-          color: #fff;
+          color: #000;
           &:focus {
             outline: none;
           }

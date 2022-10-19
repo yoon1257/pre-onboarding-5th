@@ -45,8 +45,7 @@ const Main = () => {
   );
 };
 const MainStyle = styled.div`
-  background-image: url("/images/space.jpeg");
-  background-size: cover;
+  background-color: #fff;
   height: 100vh;
   .outer-container {
     border-left: 1px solid ${blue};

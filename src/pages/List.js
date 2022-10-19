@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { blue } from "../styles/theme";
 import axios from "axios";
-import { data } from "../components/ChartPie";
 
 const List = (id) => {
   const [showData, setShowData] = useState("");
@@ -22,7 +21,6 @@ const List = (id) => {
         console.log("에러에러", err);
       });
   }, []);
-  console.log("data", data);
   return (
     <ListBlock>
       <div className="outer-container">
@@ -53,10 +51,11 @@ const List = (id) => {
                       <Link to={`/detail/${id}`} />
                       <div>
                         <div className="num">{data.id}</div>
-                        <div className="subject" data={data}>
-                          {data.title}
+                        <div className="subject">
+                          <Link to={`/detail/${id}`} className="title">
+                            {data.title}
+                          </Link>
                         </div>
-
                         <div className="user">{data.user}</div>
                         <div className="time">{data.time}</div>
                       </div>
@@ -77,9 +76,7 @@ const List = (id) => {
 };
 
 const ListBlock = styled.div`
-  background-image: url("/images/space.jpeg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: #fff;
   height: 100vh;
   .outer-container {
     border-left: 1px solid ${blue};
@@ -126,7 +123,7 @@ const ListBlock = styled.div`
         min-width: 80px;
         padding: 10px;
         margin-left: 10px;
-        background-color: #000;
+        background-color: transparent;
         color: ${blue};
         border: 1px solid ${blue};
         border-radius: 2px;
@@ -137,6 +134,7 @@ const ListBlock = styled.div`
       }
       .board-list .top {
         width: 100%;
+        text-align: center;
         border-top: 1px solid ${blue};
       }
       .board-list > div > div {
@@ -151,6 +149,11 @@ const ListBlock = styled.div`
       }
       .subject {
         width: 60%;
+
+        .title {
+          text-decoration: none;
+          color: ${blue};
+        }
       }
       .time {
         width: 15%;

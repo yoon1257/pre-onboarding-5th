@@ -22,6 +22,14 @@ const User = () => {
                 <ChartLine />
               </div>
             </div>
+            <div className="proflie-container">
+              <img
+                className="proflie-style"
+                alt="proflie"
+                src="/images/proflie.jpeg"
+              />
+              <p>cording123@gmail.com</p>
+            </div>
           </div>
         </div>
       </UserBlock>
@@ -29,9 +37,7 @@ const User = () => {
   );
 };
 const UserBlock = styled.div`
-  background-image: url("/images/space.jpeg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: #fff;
   height: 100vh;
   .outer-container {
     border-left: 1px solid ${blue};
@@ -40,25 +46,42 @@ const UserBlock = styled.div`
     align-items: center;
     .inner-container {
       display: flex;
+      flex-direction: column;
       margin: 0 auto;
+      color: ${blue};
       border: 1px solid ${blue};
       border-radius: 10px;
       width: 80%;
       height: 500px;
       .chart-container {
+        height: 70%;
         display: flex;
         justify-content: center;
         .chart-pie {
           width: 40%;
-          height: 150px;
+          height: 50%;
         }
         .chart-bar {
           width: 35%;
-          height: 300px;
         }
         .chart-line {
+          position: relative;
           width: 35%;
-          height: 400px;
+        }
+        .canvas {
+          width: 100%;
+          height: 100px;
+        }
+      }
+      .proflie-container {
+        display: flex;
+        border-top: 1px solid ${blue};
+        padding: 30px;
+        .proflie-style {
+          width: 100px;
+          height: 100px;
+          border-radius: 100%;
+          margin-right: 20px;
         }
       }
     }

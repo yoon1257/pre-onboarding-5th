@@ -33,7 +33,10 @@ export const data = {
 export function ChartPie() {
   return (
     <>
-      <Pie data={data} />
+      <Pie
+        data={data}
+        style={{ position: "relative", width: "100px", height: "200px" }}
+      />
     </>
   );
 }

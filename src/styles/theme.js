@@ -1,3 +1,3 @@
-const blue = "#49cfd7";
+const blue = "#3183B5";
 
 export { blue };

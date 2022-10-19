@@ -3,6 +3,7 @@ import React from "react";
 import { Line } from "react-chartjs-2";
 
 const data = {
+  responsive: false,
   labels: ["4월", "5월", "6월", "7월"],
   datasets: [
     {
