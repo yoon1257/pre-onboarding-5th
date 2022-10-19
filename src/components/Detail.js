@@ -10,7 +10,7 @@ const Detail = () => {
 
   useEffect(() => {
     axios
-      .get("/data/context.json")
+      .get("data/context.json")
       .then((res) => {
         setShowData(res.data);
       })
