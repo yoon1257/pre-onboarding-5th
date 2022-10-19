@@ -3,7 +3,6 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Pie } from "react-chartjs-2";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
-
 export const data = {
   datasets: [
     {
@@ -29,14 +28,25 @@ export const data = {
     },
   ],
 };
+const options = {
+  // responsive 속성을 false로 지정한다.
+  responsive: false,
+  maintainAspectRatio: true,
+  scales: {
+    yAxes: [
+      {
+        ticks: {
+          beginAtZero: true,
+        },
+      },
+    ],
+  },
+};
 
 export function ChartPie() {
   return (
     <>
-      <Pie
-        data={data}
-        style={{ position: "relative", width: "100px", height: "200px" }}
-      />
+      <Pie data={data} options={options} />
     </>
   );
 }

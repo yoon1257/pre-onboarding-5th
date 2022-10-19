@@ -1,23 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { blue } from "../styles/theme";
-import axios from "axios";
 
 const Setting = () => {
-  const [myName, setMyname] = useState(false);
-  const [userName, setUserName] = useState("");
-  const handleName = () => {
-    setMyname((prev) => !prev);
-    axios
-      .patch(
-        "./data.nameInfo.json/my/name",
-        { name: userName },
-        {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-        }
-      )
-      .then(() => setUserName(""));
-  };
   return (
     <>
       <SettingBlock>

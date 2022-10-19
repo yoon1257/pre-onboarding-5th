@@ -15,11 +15,24 @@ const data = {
     },
   ],
 };
+const options = {
+  responsive: false,
+  maintainAspectRatio: true,
+  scales: {
+    yAxes: [
+      {
+        ticks: {
+          beginAtZero: true,
+        },
+      },
+    ],
+  },
+};
 
 export default function App() {
   return (
     <div className="App">
-      <Line data={data} />
+      <Line data={data} options={options} />
     </div>
   );
 }

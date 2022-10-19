@@ -47,6 +47,7 @@ const UserBlock = styled.div`
     .inner-container {
       display: flex;
       flex-direction: column;
+      justify-content: center;
       margin: 0 auto;
       color: ${blue};
       border: 1px solid ${blue};
@@ -56,25 +57,12 @@ const UserBlock = styled.div`
       .chart-container {
         height: 70%;
         display: flex;
-        justify-content: center;
-        .chart-pie {
-          width: 40%;
-          height: 50%;
-        }
-        .chart-bar {
-          width: 35%;
-        }
-        .chart-line {
-          position: relative;
-          width: 35%;
-        }
-        .canvas {
-          width: 100%;
-          height: 100px;
-        }
+        justify-content: space-between;
+        align-items: center;
       }
       .proflie-container {
         display: flex;
+        align-items: center;
         border-top: 1px solid ${blue};
         padding: 30px;
         .proflie-style {

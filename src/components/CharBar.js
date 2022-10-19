@@ -16,10 +16,23 @@ const ChartBar = () => {
       },
     ],
   };
+  const options = {
+    responsive: false,
+    maintainAspectRatio: true,
+    scales: {
+      yAxes: [
+        {
+          ticks: {
+            beginAtZero: true,
+          },
+        },
+      ],
+    },
+  };
 
   return (
     <div>
-      <Line type="line" data={data} />
+      <Line type="line" data={data} options={options} />
     </div>
   );
 };

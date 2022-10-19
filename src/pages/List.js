@@ -48,11 +48,14 @@ const List = (id) => {
                 showData.map((data) => {
                   return (
                     <>
-                      <Link to={`/detail/${id}`} />
-                      <div>
+                      <div key={data.id}>
                         <div className="num">{data.id}</div>
                         <div className="subject">
-                          <Link to={`/detail/${id}`} className="title">
+                          <Link
+                            to={"/detail/" + id}
+                            state={{ data: "data" }}
+                            className="title"
+                          >
                             {data.title}
                           </Link>
                         </div>
