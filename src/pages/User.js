@@ -4,7 +4,7 @@ import { blue } from "../styles/theme";
 import { ChartPie } from "../components/ChartPie";
 import ChartBar from "../components/CharBar";
 import ChartLine from "../components/ChartLine";
-
+import { proflie } from "../assets/image/proflie.jpeg";
 const User = () => {
   return (
     <>
@@ -23,11 +23,7 @@ const User = () => {
               </div>
             </div>
             <div className="proflie-container">
-              <img
-                className="proflie-style"
-                alt="proflie"
-                src="/images/proflie.jpeg"
-              />
+              <img className="proflie-style" alt="proflie" src={proflie} />
               <p>cording123@gmail.com</p>
             </div>
           </div>
