@@ -15,7 +15,6 @@ const List = () => {
       .get("./data/context.json")
       .then((res) => {
         setShowData(res.data);
-        console.log("성공");
       })
       .catch((err) => {
         console.log("에러에러", err);

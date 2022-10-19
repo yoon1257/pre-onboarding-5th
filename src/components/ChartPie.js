@@ -29,7 +29,6 @@ export const data = {
   ],
 };
 const options = {
-  // responsive 속성을 false로 지정한다.
   responsive: false,
   maintainAspectRatio: true,
   scales: {

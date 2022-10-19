@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-
 import styled from "styled-components";
 import { blue } from "../styles/theme";
 
@@ -13,16 +12,12 @@ const Detail = () => {
     axios
       .get("/data/context.json")
       .then((res) => {
-        console.log(res);
         setShowData(res.data);
-        console.log("성공");
       })
       .catch((err) => {
         console.log("에러에러", err);
       });
   }, []);
-  console.log("뫄뫄", showData);
-  console.log("sksk", params);
   return (
     <>
       {showData && (
