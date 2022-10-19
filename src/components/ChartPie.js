@@ -3,11 +3,10 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Pie } from "react-chartjs-2";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
-
 export const data = {
   datasets: [
     {
-      label: "# of Votes",
+      label: "사용자 연령대",
       data: [35, 29, 11, 10, 8, 7],
       backgroundColor: [
         "#56C1FE",
@@ -29,11 +28,25 @@ export const data = {
     },
   ],
 };
+const options = {
+  // responsive 속성을 false로 지정한다.
+  responsive: false,
+  maintainAspectRatio: true,
+  scales: {
+    yAxes: [
+      {
+        ticks: {
+          beginAtZero: true,
+        },
+      },
+    ],
+  },
+};
 
 export function ChartPie() {
   return (
     <>
-      <Pie data={data} />
+      <Pie data={data} options={options} />
     </>
   );
 }

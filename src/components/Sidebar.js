@@ -55,7 +55,7 @@ const Wrapper = styled.div`
   }
   .menu-bar {
     color: ${blue};
-    background-image: url("/images/space.jpeg");
+    background-color: #fff;
   }
   .text-decoration-none {
     font-size: 28px;
