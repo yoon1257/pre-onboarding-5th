@@ -1,25 +1,43 @@
-import React from "react";
-import { useLocation } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
 import styled from "styled-components";
 import { blue } from "../styles/theme";
 
 const Detail = () => {
-  const location = useLocation("");
-  console.log("ahk", location);
+  const [showData, setShowData] = useState("");
+  const params = Number(useParams().id);
+
+  useEffect(() => {
+    axios
+      .get("/data/context.json")
+      .then((res) => {
+        console.log(res);
+        setShowData(res.data);
+        console.log("성공");
+      })
+      .catch((err) => {
+        console.log("에러에러", err);
+      });
+  }, []);
+  console.log("뫄뫄", showData);
+  console.log("sksk", params);
   return (
     <>
-      <DetailBlock>
-        <div className="outer-container">
-          <div className="inner-container">
-            <div className="title-container">
-              <strong className="title">제목</strong>
-              <p className="time">시간</p>
+      {showData && (
+        <DetailBlock>
+          <div className="outer-container">
+            <div className="inner-container">
+              <div className="title-container">
+                <strong className="title">{showData[params - 1].title}</strong>
+                <p className="time">{showData[params - 1].time}</p>
+              </div>
+              <div className="context">{showData[params - 1].context}</div>
             </div>
-            <div className="context">내용</div>
           </div>
-        </div>
-      </DetailBlock>
+        </DetailBlock>
+      )}
     </>
   );
 };
