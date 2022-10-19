@@ -9,8 +9,7 @@ const Detail = () => {
   const params = Number(useParams().id);
 
   useEffect(() => {
-    axios
-      .get("data/context.json")
+    axios("data/context.json")
       .then((res) => {
         setShowData(res.data);
       })
